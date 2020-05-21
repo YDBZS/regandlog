@@ -27,11 +27,11 @@ public class LoginController extends BaseController {
 
 
     /**
-     * @Author：Axel
-     * @Date：2020/4/23 15:41
-     * @Params：[vo]
-     * @Reture：com.ydbzs.util.Result
-     * @Descrip：查询数据库是否存在用户信息
+     * 查询数据库是否存在用户信息
+     * @author ：Axel
+     * @date ：2020/5/21 16:38
+     * @params ：[vo]
+     * @return ：com.ydbzs.util.Result
      */
     @PostMapping("/check_tel")
     @ResponseBody
@@ -50,16 +50,15 @@ public class LoginController extends BaseController {
 
 
     /**
-     * @Author：Axel
-     * @Date：2020/4/23 16:30
-     * @Params：[vo]
-     * @Reture：com.ydbzs.util.Result
-     * @Descrip：用户登录的方法
+     * 用户登录的方法
+     * @author ：Axel
+     * @date ：2020/5/21 16:40
+     * @params ：[vo]
+     * @return ：com.ydbzs.util.Result
      */
     @PostMapping("/do_login")
     @ResponseBody
     public Result doLogin(LoginVO vo){
-
         //根据用户账号查询数据库对应的盐值
         String mobile = vo.getMobile();
         String password = vo.getPassword();
