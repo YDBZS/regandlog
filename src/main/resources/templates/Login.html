@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户登录</title>
+
+    <!-- jquery -->
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+    <script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- jquery-validator -->
+    <script type="text/javascript" th:src="@{/jquery-validation/jquery.validate.min.js}"></script>
+    <script type="text/javascript" th:src="@{/jquery-validation/localization/messages_zh.min.js}"></script>
+    <!-- layer -->
+    <script type="text/javascript" th:src="@{/layer/layer.js}"></script>
+    <!-- md5.js -->
+    <script type="text/javascript" th:src="@{/js/md5.js}"></script>
+    <!-- common.js -->
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+    <!-- Login.js -->
+    <script type="text/javascript" th:src="@{/self_js/Login.js}"></script>
+
+</head>
+<body>
+
+        <form method="post" class="container-fluid">
+            <div class="form-group">
+                <label>登录手机号： </label>
+                <input type="text" class="form-control" id="tel" placeholder="登录用户手机" onblur="findNum()"> <span id="check" style="color: red"></span>
+            </div>
+            <div class="form-group">
+                <label>用户登录密码: </label>
+                <input class="form-control" type="password" id="pass" placeholder="用户登录密码">
+            </div>
+            <br>
+            <input class="btn btn-primary col-md-offset-4" type="submit" onclick="login()" value="提交"/>
+            <input class="btn btn-success col-md-offset-2" type="reset" value="重置"><br>
+        </form>
+
+</body>
+</html>

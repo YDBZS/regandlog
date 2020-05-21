@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ydbzs.mapper.UserMapper">
+
+  <resultMap id="BaseResultMap" type="com.ydbzs.pojo.User">
+    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="dbsalt" jdbcType="VARCHAR" property="dbsalt" />
+  </resultMap>
+
+  <!--用户注册添加用户信息-->
+  <insert id="insertUser">
+    insert into user values(uid,#{name},#{mobile},#{dbpass},#{salt})
+  </insert>
+
+
+  <!--查询数据库是否存在当前用户输入的账户-->
+  <select id="check_tel" resultType="int">
+        select count(uid) from user where mobile = #{tel};
+  </select>
+
+
+  <!--查询用户数据库存储盐值-->
+  <select id="findSalt" resultType="String">
+    select dbsalt from user where mobile = #{tel};
+  </select>
+
+  <!--用户登录信息查询-->
+    <select id="searchByTelAndPass" resultMap="BaseResultMap">
+        select * from user where mobile = #{tel} and password = #{pass};
+    </select>
+
+
+</mapper>
