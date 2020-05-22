@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * 所有Controller公用的成分
- * @author ：Axel
+ * @author ：多宝
  * @date ：2020/4/23 11:34
  * @project ：regandlog com.ydbzs.api
  */
@@ -22,7 +22,7 @@ public class BaseController {
 
     /**
      * 封装获取所有的前端参数校验的错误字段以及是错误信息
-     * @author ：Axel
+     * @author ：多宝
      * @date ：2020/4/26 10:44
      * @params ：[result]
      * @return ：java.util.Map<java.lang.String,java.lang.String>

@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper extends MyMapper<User> {
 
     /**
-     * @Author：Axel
+     * @Author：多宝
      * @Date：2020/4/22 10:57
      * @Params：[name, mobile, dbpass]
      * @Reture：int
@@ -19,7 +19,7 @@ public interface UserMapper extends MyMapper<User> {
 
 
     /**
-     * @Author：Axel
+     * @Author：多宝
      * @Date：2020/4/23 15:58
      * @Params：[tel]
      * @Reture：int
@@ -30,7 +30,7 @@ public interface UserMapper extends MyMapper<User> {
 
 
     /**
-     * @Author：Axel
+     * @Author：多宝
      * @Date：2020/4/23 16:33
      * @Params：[tel]
      * @Reture：java.lang.String
@@ -41,7 +41,7 @@ public interface UserMapper extends MyMapper<User> {
 
 
     /**
-     * @Author：Axel
+     * @Author：多宝
      * @Date：2020/4/22 11:00
      * @Params：[tel, pass]
      * @Reture：com.ydbzs.pojo.User

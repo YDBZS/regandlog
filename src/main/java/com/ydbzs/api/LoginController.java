@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 用户登录的Controller
- * @author ：Axel
+ * @author ：多宝
  * @date ：2020/4/22 9:43
  * @project ：regandlog com.ydbzs.api
  */
@@ -28,7 +28,7 @@ public class LoginController extends BaseController {
 
     /**
      * 查询数据库是否存在用户信息
-     * @author ：Axel
+     * @author ：多宝
      * @date ：2020/5/21 16:38
      * @params ：[vo]
      * @return ：com.ydbzs.util.Result
@@ -47,7 +47,7 @@ public class LoginController extends BaseController {
 
     /**
      * 用户登录的方法
-     * @author ：Axel
+     * @author ：多宝
      * @date ：2020/5/21 16:40
      * @params ：[vo]
      * @return ：com.ydbzs.util.Result

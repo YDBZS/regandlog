@@ -1,14 +1,12 @@
 package com.ydbzs.util;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Random;
 
 /**
- * @Auth：Axel
- * @Date：2020/4/28 14:28
- * @Project：regandlog com.ydbzs.util
- * @Description：随机生成六位数字验证码
+ * 随机生成六位数字验证码
+ * @author ：多宝
+ * @date ：2020/4/28 14:28
+ * @project ：regandlog com.ydbzs.util
  */
 public class VerificationCodeGener {
     public static String[] chars = new String[] {"0","1","2","3","4","5","6","7","8","9"};

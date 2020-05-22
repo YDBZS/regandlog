@@ -8,8 +8,8 @@ package com.ydbzs.util;
  * @ClassName CodeMsg
  */
 public class CodeMsg {
-    private int code;    //状态
-    private String msg;   //返回信息
+    private final int code;    //状态
+    private final String msg;   //返回信息
 
     //通常异常返回信息
     public static CodeMsg USER_EMPTY = new CodeMsg(404,"该用户不存在，请检查用户名以及是密码！");

@@ -2,12 +2,12 @@ package com.ydbzs.Service;
 
 
 /**
+ * 注册Service接口
  * @version 1.0
- * @Project regandlog
- * @Author 多宝
- * @Date 2020/4/7 10:36
- * @ClassName registeService
- * @Description
+ * @project regandlog
+ * @author 多宝
+ * @date 2020/4/7 10:36
+ * @className registeService
  */
 
 public interface registeService {

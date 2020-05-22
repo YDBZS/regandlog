@@ -35,7 +35,7 @@ public class RegisterController extends BaseController {
 
     /**
      * 前端用户信息加密存储数据库
-     * @author ：Axel
+     * @author ：多宝
      * @date ：2020/4/22 10:19
      * @params ：[vo]
      * @return ：java.lang.Integer
@@ -71,7 +71,7 @@ public class RegisterController extends BaseController {
 
     /**
      * 跳转注册失败页面
-     * @author ：Axel
+     * @author ：多宝
      * @date ：2020/4/22 10:20
      * @params ：[]
      * @return ：java.lang.String
@@ -85,7 +85,7 @@ public class RegisterController extends BaseController {
 
     /**
      * 跳转登录页面
-     * @author ：Axel
+     * @author ：多宝
      * @date ：2020/4/22 10:21
      * @params ：[]
      * @return ：java.lang.String
@@ -98,7 +98,7 @@ public class RegisterController extends BaseController {
 
     /**
      * 只是简单的做一个页面的跳转，跳转登陆成功提示页面
-     * @author ：Axel
+     * @author ：多宝
      * @date ：2020/4/26 18:39
      * @params ：[]
      * @return ：java.lang.String
@@ -111,7 +111,7 @@ public class RegisterController extends BaseController {
 
     /**
      * 前端获取验证码的Controller
-     * @author ：Axel
+     * @author ：多宝
      * @date ：2020/5/22 9:56
      * @params ：[httpRequest]
      * @return ：com.ydbzs.util.Result<java.lang.Object>
@@ -127,7 +127,7 @@ public class RegisterController extends BaseController {
 
     /**
      * 校验验证码的Controller
-     * @author ：Axel
+     * @author ：多宝
      * @date ：2020/5/22 9:57
      * @params ：[]
      * @return ：com.ydbzs.util.Result<com.ydbzs.util.CodeMsg>

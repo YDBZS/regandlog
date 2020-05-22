@@ -3,10 +3,10 @@ package com.ydbzs.util;
 import java.util.Random;
 
 /**
- * @Auth：Axel
- * @Date：2020/4/23 14:52
- * @Project：regandlog com.ydbzs.util
- * @Description：从以下字符中随机取出8个字符作为用户密码加密盐值，存储数据库
+ * 从以下字符中随机取出8个字符作为用户密码加密盐值，存储数据库
+ * @author ：多宝
+ * @date ：2020/4/23 14:52
+ * @project ：regandlog com.ydbzs.util
  */
 public class saltGener {
 

@@ -3,7 +3,7 @@ package com.ydbzs.Service;
 import com.ydbzs.pojo.User;
 
 /**
- * @Auth：Axel
+ * @Auth：多宝
  * @Date：2020/4/22 10:54
  * @Project：regandlog com.ydbzs.Service
  * @Description：
@@ -11,7 +11,7 @@ import com.ydbzs.pojo.User;
 public interface LoginService {
 
     /**
-     * @Author：Axel
+     * @Author：多宝
      * @Date：2020/4/23 15:55
      * @Params：[tel]
      * @Reture：int
@@ -22,7 +22,7 @@ public interface LoginService {
 
 
     /**
-     * @Author：Axel
+     * @Author：多宝
      * @Date：2020/4/23 16:31
      * @Params：[tel]
      * @Reture：java.lang.String
@@ -32,7 +32,7 @@ public interface LoginService {
 
 
     /**
-     * @Author：Axel
+     * @Author：多宝
      * @Date：2020/4/23 15:54
      * @Params：[tel, pass]
      * @Reture：com.ydbzs.pojo.User

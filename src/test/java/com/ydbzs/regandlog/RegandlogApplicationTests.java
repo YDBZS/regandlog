@@ -12,8 +12,6 @@ class RegandlogApplicationTests {
     void contextLoads() {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid);
-
-
     }
 
 }

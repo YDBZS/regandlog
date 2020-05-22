@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * 跳转首页Controller
  *
- * @author ：Axel
+ * @author ：多宝
  * @date ：2020/5/19 11:49
  */
 @Controller

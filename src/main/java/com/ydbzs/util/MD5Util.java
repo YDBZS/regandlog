@@ -3,12 +3,12 @@ package com.ydbzs.util;
 import org.apache.commons.codec.digest.DigestUtils;
 
 /**
+ * MD5 加密工具类
  * @version 1.0
- * @Project miaosha_2
- * @Author 多宝
- * @Date 2020/1/5 10:04
- * @ClassName MD5Util
- * @Description
+ * @project miaosha_2
+ * @author 多宝
+ * @date 2020/1/5 10:04
+ * @className MD5Util
  */
 public class MD5Util {
     //对明文字符串做一个md5的加密

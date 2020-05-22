@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @Auth：Axel
+ * @Auth：多宝
  * @Date：2020/4/22 10:56
  * @Project：regandlog com.ydbzs.Service.Impl
  * @Description：
@@ -19,11 +19,11 @@ public class LoginServiceImpl implements LoginService {
     UserMapper userMapper;
 
     /**
-     * @Author：Axel
-     * @Date：2020/4/23 15:57
-     * @Params：[tel]
-     * @Reture：int
-     * @Descrip：查询数据库是否存在当前用户输入的账户
+     * 查询数据库是否存在当前用户输入的账户
+     * @author ：多宝
+     * @date ：2020/4/23 15:57
+     * @params ：[tel]
+     * @return ：int
      */
     @Override
     public int check_tel(String tel) {
@@ -33,7 +33,7 @@ public class LoginServiceImpl implements LoginService {
 
 
     /**
-     * @Author：Axel
+     * @Author：多宝
      * @Date：2020/4/23 16:32
      * @Params：[tel]
      * @Reture：java.lang.String
@@ -46,7 +46,7 @@ public class LoginServiceImpl implements LoginService {
     }
 
     /**
-     * @Author：Axel
+     * @Author：多宝
      * @Date：2020/4/23 15:56
      * @Params：[tel, pass]
      * @Reture：com.ydbzs.pojo.User

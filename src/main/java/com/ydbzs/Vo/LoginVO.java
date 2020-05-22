@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 /**
  * 接收前端参数
  * @version 1.0
- * @Project regandlog
+ * @project regandlog
  * @author 多宝
  * @date 2020/4/7 9:38
  * @className LoginVO
