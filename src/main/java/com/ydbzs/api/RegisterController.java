@@ -16,12 +16,13 @@ import javax.validation.Valid;
 import java.util.Map;
 
 /**
+ * 注册Controller
+ *
  * @version 1.0
- * @Project regandlog
- * @Author 多宝
- * @Date 2020/4/7 9:35
- * @ClassName LoginController
- * @Description
+ * @project regandlog
+ * @author 多宝
+ * @date 2020/4/7 9:35
+ * @className LoginController
  */
 @Controller
 @RequestMapping("/register")
@@ -33,35 +34,24 @@ public class RegisterController extends BaseController {
 
 
     /**
-     * @Author：Axel
-     * @Date：2020/4/22 10:19
-     * @Params：[vo]
-     * @Reture：java.lang.Integer
-     * @Descrip：前端用户信息加密存储数据库
+     * 前端用户信息加密存储数据库
+     * @author ：Axel
+     * @date ：2020/4/22 10:19
+     * @params ：[vo]
+     * @return ：java.lang.Integer
      */
     @RequestMapping("do_regist")
     @ResponseBody
-    public Result doLogin(
+    public Result<Object> doRegist(
             //前端参数校验
             @Valid LoginVO vo,
             //前端参数出现问题，错误信息
             BindingResult result
     ){
-
         //1.获取前端传递对象
         String name = vo.getName();
         String mobile = vo.getMobile();
         String password = vo.getPassword();
-        //2.对前端参数进行空值判断
-        if("" == name || "" == mobile || "" == password){
-            if("" == name){
-                return Result.errorMsg(CodeMsg.NAME_EMPTY);
-            }else if ("" == mobile){
-                return Result.errorMsg(CodeMsg.MOBILE_EMPTY);
-            }else if("" == password){
-                return Result.errorMsg(CodeMsg.PASS_EMPTY);
-            }
-        }
         //前端参数格式校验
         if(result.hasErrors()){
             //获取所有的错误字段以及是错误信息(封装在了BaseController)
@@ -80,11 +70,11 @@ public class RegisterController extends BaseController {
 
 
     /**
-     * @Author：Axel
-     * @Date：2020/4/22 10:20
-     * @Params：[]
-     * @Reture：java.lang.String
-     * @Descrip：跳转注册失败页面
+     * 跳转注册失败页面
+     * @author ：Axel
+     * @date ：2020/4/22 10:20
+     * @params ：[]
+     * @return ：java.lang.String
      */
     @RequestMapping("regerror")
     public String regerror(){
@@ -94,11 +84,11 @@ public class RegisterController extends BaseController {
 
 
     /**
-     * @Author：Axel
-     * @Date：2020/4/22 10:21
-     * @Params：[]
-     * @Reture：java.lang.String
-     * @Descrip：跳转登录页面
+     * 跳转登录页面
+     * @author ：Axel
+     * @date ：2020/4/22 10:21
+     * @params ：[]
+     * @return ：java.lang.String
      */
     @RequestMapping("/do_Login")
     public String do_Login(){
@@ -107,11 +97,11 @@ public class RegisterController extends BaseController {
 
 
     /**
-     * @Author：Axel
-     * @Date：2020/4/26 18:39
-     * @Params：[]
-     * @Reture：java.lang.String
-     * @Descrip：只是简单的做一个页面的跳转，跳转登陆成功提示页面
+     * 只是简单的做一个页面的跳转，跳转登陆成功提示页面
+     * @author ：Axel
+     * @date ：2020/4/26 18:39
+     * @params ：[]
+     * @return ：java.lang.String
      */
     @RequestMapping("/reg_success")
     public String reg_success(){
@@ -119,13 +109,48 @@ public class RegisterController extends BaseController {
     }
 
 
+    /**
+     * 前端获取验证码的Controller
+     * @author ：Axel
+     * @date ：2020/5/22 9:56
+     * @params ：[httpRequest]
+     * @return ：com.ydbzs.util.Result<java.lang.Object>
+     */
     @PostMapping("/getCode")
     @ResponseBody
-    public Result getCode(HttpServletRequest httpRequest){
+    public Result<Object> getCode(HttpServletRequest httpRequest){
         String code = VerificationCodeGener.getCode();
         HttpSession session = httpRequest.getSession();
         session.setAttribute("code",code);
         return Result.success(code);
+    }
+
+    /**
+     * 校验验证码的Controller
+     * @author ：Axel
+     * @date ：2020/5/22 9:57
+     * @params ：[]
+     * @return ：com.ydbzs.util.Result<com.ydbzs.util.CodeMsg>
+     */
+    @PostMapping("/checkCode")
+    @ResponseBody
+    public Result<CodeMsg> checkCode(HttpServletRequest request,String code){
+
+        HttpSession session = request.getSession();
+        Object code1 = session.getAttribute("code");
+        String s = String.valueOf(code1);
+        if ("".equals(code)){
+            return Result.errorMsg(CodeMsg.CODE_IS_BLANK);
+        }
+        if ("null".equals(s)){
+            return Result.errorMsg(CodeMsg.CODE_MISS);
+        }
+        if (code.equals(s)){
+            session.removeAttribute("code");
+            return Result.successMsg(CodeMsg.CODE_IS_CORRECT);
+        }
+
+        return Result.errorMsg(CodeMsg.CODE_ERROR);
     }
 
 

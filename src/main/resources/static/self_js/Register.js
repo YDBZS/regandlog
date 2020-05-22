@@ -33,7 +33,8 @@ function doLogin() {
         data:{
             Name:$("#name").val(),
             Mobile:$("#mobile").val(),
-            Password:$("#repass").val()
+            Password:$("#repass").val(),
+            code:$("#Code").val()
         },
         success:function (data) {
             if(null != data.msg){
@@ -47,6 +48,9 @@ function doLogin() {
             }
             if(null != data.data.Password) {
                 alert(data.data.Password)
+            }
+            if (null != data.data.code){
+                alert(data.data.code)
             }
             if(data.code == 200){
                 //参数没有问题的话，跳转注册成功页面
@@ -101,5 +105,29 @@ function getCode() {
 
 //离焦事件
 function checkCode() {
-
+    var code = $("#Code").val();
+    $.ajax({
+            url: "/register/checkCode",
+            type: "POST",
+            data: {
+                code: code
+            },
+            success: function (data) {
+                if (data.code == 600) {
+                    alert(data.msg);
+                } else if (data.code == 601) {
+                    alert(data.msg);
+                    $("#Code").val('');
+                } else if (data.code == 602) {
+                    alert(data.msg);
+                    $("#Code").val('');
+                }else if (data.code == 603){
+                    alert(data.msg);
+                }
+            },
+            error: function (data) {
+                alert(data.code);
+                alert("服务器异常！！！");
+            }
+        })
 }

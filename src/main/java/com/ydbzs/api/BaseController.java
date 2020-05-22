@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Auth：Axel
- * @Date：2020/4/23 11:34
- * @Project：regandlog com.ydbzs.api
- * @Description：所有Controller公用的成分
+ * 所有Controller公用的成分
+ * @author ：Axel
+ * @date ：2020/4/23 11:34
+ * @project ：regandlog com.ydbzs.api
  */
 public class BaseController {
 
@@ -20,15 +20,14 @@ public class BaseController {
 
 
 
-
-    public  Map<String,String> getAllErr(BindingResult result){
-        /**
-        * @Author：Axel
-        * @Date：2020/4/26 10:44
-        * @Params：[result]
-        * @Reture：java.util.Map<java.lang.String,java.lang.String>
-        * @Descrip：封装获取所有的前端参数校验的错误字段以及是错误信息
-        */
+    /**
+     * 封装获取所有的前端参数校验的错误字段以及是错误信息
+     * @author ：Axel
+     * @date ：2020/4/26 10:44
+     * @params ：[result]
+     * @return ：java.util.Map<java.lang.String,java.lang.String>
+     */
+    public Map<String,String> getAllErr(BindingResult result){
         Map<String,String> errmap = new HashMap<>();
         List<FieldError> fields = result.getFieldErrors();
         for (FieldError field : fields) {

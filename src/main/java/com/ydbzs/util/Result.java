@@ -3,12 +3,13 @@ package com.ydbzs.util;
 import lombok.Data;
 
 /**
+ * 自定义返回结果类
+ *
  * @version 1.0
- * @Project regandlog
- * @Author 多宝
- * @Date 2020/4/7 9:37
- * @ClassName Result
- * @Description  自定义返回结果类
+ * @project regandlog
+ * @author 多宝
+ * @date 2020/4/7 9:37
+ * @className Result
  */
 @Data
 public class Result<T> {
@@ -38,7 +39,7 @@ public class Result<T> {
     }
 
     public static <T> Result<T> errorMap(T data){
-        return new Result<T>(0000,"err",data);
+        return new Result<T>(data);
     }
 
     private Result(int code){
@@ -70,5 +71,14 @@ public class Result<T> {
             this.data = data;
         }
     }
+
+
+    /*private Result(CodeMsg codeMsg, Object data){
+            if(codeMsg != null && data != null){
+                this.code = codeMsg.getCode();
+                this.msg = codeMsg.getMsg();
+                this.obj = data;
+            }
+        }*/
 
 }
