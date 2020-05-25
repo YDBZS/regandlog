@@ -18,29 +18,7 @@ public class saltGener {
             "W", "X", "Y", "Z" };
 
     public static void main(String[] args) {
-
-        /*//创建字符串缓冲区
-        StringBuffer sb = new StringBuffer();
-
-        Random random = new Random();
-        int i = random.nextInt(chars.length);
-        System.out.println(i);
-        String aChar = chars[i];
-        System.out.println("--------------------------------------------绿色分割--------------------------------------------------");
-        System.out.println(aChar);
-
-
-        System.out.println("--------------------------------------------绿色分割--------------------------------------------------");
-        //循环往缓冲区添加字符形成字符串
-        for (int j = 0; j <= 7; j++) {
-            int w = random.nextInt(chars.length);
-            String aChar1 = chars[w];
-            sb.append(aChar1);
-        }
-        String s = sb.toString();
-        System.out.println(s);*/
         Gener();
-
     }
 
     public static String Gener(){

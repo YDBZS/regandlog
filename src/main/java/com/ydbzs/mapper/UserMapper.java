@@ -9,32 +9,32 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper extends MyMapper<User> {
 
     /**
-     * @Author：多宝
-     * @Date：2020/4/22 10:57
-     * @Params：[name, mobile, dbpass]
-     * @Reture：int
-     * @Descrip：用户注册，数据库插入用户数据
+     * 用户注册，数据库插入用户数据
+     * @author ：多宝
+     * @date ：2020/4/22 10:57
+     * @params ：[name, mobile, dbpass]
+     * @reture ：int
      */
     int insertUser(String name, String mobile, String dbpass, String salt);
 
 
     /**
-     * @Author：多宝
-     * @Date：2020/4/23 15:58
-     * @Params：[tel]
-     * @Reture：int
-     * @Descrip：查询数据库是否存在当前用户输入的账户
+     * 查询数据库是否存在当前用户输入的账户
+     * @author ：多宝
+     * @date ：2020/4/23 15:58
+     * @params ：[tel]
+     * @reture ：int
      */
     int check_tel(String tel);
 
 
 
     /**
-     * @Author：多宝
-     * @Date：2020/4/23 16:33
-     * @Params：[tel]
-     * @Reture：java.lang.String
-     * @Descrip：根据用户的一个账号查询用户在数据库存储的一个盐值
+     * 根据用户的一个账号查询用户在数据库存储的一个盐值
+     * @author ：多宝
+     * @date ：2020/4/23 16:33
+     * @params ：[tel]
+     * @reture ：java.lang.String
      */
     String findSalt(String tel);
 

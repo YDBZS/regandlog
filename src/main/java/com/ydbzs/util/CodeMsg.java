@@ -1,5 +1,7 @@
 package com.ydbzs.util;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * @version 1.0
  * @Project miaosha
@@ -53,9 +55,6 @@ public class CodeMsg {
 
     @Override
     public String toString() {
-        return "CodeMsg{" +
-                "code=" + code +
-                ", msg='" + msg + '\'' +
-                '}';
+        return JSON.toJSONString(this);
     }
 }
