@@ -3,6 +3,8 @@ package com.ydbzs.api;
 import com.ydbzs.Service.registeService;
 import com.ydbzs.Vo.LoginVO;
 import com.ydbzs.util.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -26,6 +28,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/register")
+@Api(value = "用户注册的接口", tags = "{用户注册的接口}")
 public class RegisterController extends BaseController {
 
     @Autowired
@@ -42,6 +45,7 @@ public class RegisterController extends BaseController {
      */
     @RequestMapping("do_regist")
     @ResponseBody
+    @ApiOperation(value = "用户注册的接口", notes = "用户注册的接口", httpMethod = "POST")
     public Result<Object> doRegist(
             //前端参数校验
             @Valid LoginVO vo,
@@ -77,6 +81,7 @@ public class RegisterController extends BaseController {
      * @return ：java.lang.String
      */
     @RequestMapping("regerror")
+    @ApiOperation(value = "用户注册失败跳转页面", notes = "用户注册失败跳转页面", httpMethod = "GET")
     public String regerror(){
         return "RegisterFailed";
     }
@@ -91,6 +96,7 @@ public class RegisterController extends BaseController {
      * @return ：java.lang.String
      */
     @RequestMapping("/do_Login")
+    @ApiOperation(value = "用户跳转登录页面接口", notes = "用户跳转登录页面接口", httpMethod = "GET")
     public String do_Login(){
         return "Login";
     }
@@ -104,6 +110,7 @@ public class RegisterController extends BaseController {
      * @return ：java.lang.String
      */
     @RequestMapping("/reg_success")
+    @ApiOperation(value = "用户登陆成功的跳转接口", notes = "用户登陆成功的跳转接口", httpMethod = "GET")
     public String reg_success(){
         return "RegisteSuccess";
     }
@@ -118,6 +125,7 @@ public class RegisterController extends BaseController {
      */
     @PostMapping("/getCode")
     @ResponseBody
+    @ApiOperation(value = "用户获取动态验证码的后端接口", notes = "用户获取动态验证码的后端接口", httpMethod = "POST")
     public Result<Object> getCode(HttpServletRequest httpRequest){
         String code = VerificationCodeGener.getCode();
         HttpSession session = httpRequest.getSession();
@@ -134,6 +142,7 @@ public class RegisterController extends BaseController {
      */
     @PostMapping("/checkCode")
     @ResponseBody
+    @ApiOperation(value = "校验验证码的后端接口", notes = "校验验证码的后端接口", httpMethod = "POST")
     public Result<CodeMsg> checkCode(HttpServletRequest request,String code){
 
         HttpSession session = request.getSession();
