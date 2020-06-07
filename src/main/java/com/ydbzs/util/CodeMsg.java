@@ -4,10 +4,10 @@ import com.alibaba.fastjson.JSON;
 
 /**
  * @version 1.0
- * @Project miaosha
- * @Author 多宝
- * @Date 2020/1/2 14:55
- * @ClassName CodeMsg
+ * @project miaosha
+ * @author 多宝
+ * @date 2020/1/2 14:55
+ * @className CodeMsg
  */
 public class CodeMsg {
     private final int code;    //状态

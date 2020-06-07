@@ -37,6 +37,7 @@ function doLogin() {
             code:$("#Code").val()
         },
         success:function (data) {
+            alert(data.code);
             if(null != data.msg){
                 alert(data.msg);
             }
