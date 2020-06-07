@@ -35,11 +35,12 @@ public class BaseController {
             String fieldd = field.getField();
             //获取发生错误字段的错误信息
             String errMsg = field.getDefaultMessage();
-
-            System.out.println(fieldd);
-            System.out.println(errMsg);
-
-            errmap.put(fieldd,errMsg);
+            if (fieldd != null && errMsg != null){
+                System.out.println(fieldd);
+                System.out.println(errMsg);
+                errmap.put(fieldd,errMsg);
+                break;
+            }
         }
         return errmap;
     }

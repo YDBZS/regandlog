@@ -1,15 +1,19 @@
 package com.ydbzs.pojo;
 
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 public class User {
     @Id
     private Integer uid;
 
+    @NotNull(message = "名称不能为空")
     private String username;
 
+    @NotNull(message = "手机号不能为空")
     private String telephone;
 
+    @NotNull(message = "密码不能为空")
     private String password;
 
     private String dbsalt;

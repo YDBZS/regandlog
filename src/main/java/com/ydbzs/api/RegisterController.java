@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -40,11 +41,11 @@ public class RegisterController extends BaseController {
      * @params ：[vo]
      * @return ：java.lang.Integer
      */
-    @RequestMapping("do_regist")
+    @PostMapping("do_regist")
     @ResponseBody
     public Result<Object> doRegist(
             //前端参数校验
-            @Valid LoginVO vo,
+            @Valid @RequestBody LoginVO vo,
             //前端参数出现问题，错误信息
             BindingResult result
     ){
